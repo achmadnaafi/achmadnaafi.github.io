@@ -37,15 +37,15 @@ const mySkills = [
 ];
 
 const myProjects = [
-    // {
-    //     title: "Web Dashboard Monitoring",
-    //     desc: "A responsive web dashboard to monitor real-time sensor data from IoT devices.",
-    //     tech: ["Web Dev", "IoT"],
-    //     image: "assets/projects/dashboard.png",
-    //     iconFallback: "fa-laptop-code",
-    //     github: "https://github.com/achmadnaafi/",
-    //     demo: "https://achmadnaafi.github.io/"
-    // },
+    {
+        title: "Curating Projects...",
+        desc: "Saya sedang menyortir dan mendokumentasikan beberapa proyek terbaik saya. Bagian ini akan segera diperbarui dalam waktu dekat!",
+        tech: ["Maintenance", "Coming Soon"],
+        image: "", 
+        iconFallback: "fa-person-digging",
+        github: "",
+        demo: ""
+    }
 ];
 
 // DATA EXPERIENCE BERGAYA LINKEDIN (Nested berdasarkan Perusahaan)
