@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achmad Nurnaafi | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="space-background">
+        <div class="meteor"></div>
+        <div class="meteor"></div>
+        <div class="meteor"></div>
+        <div class="meteor"></div>
+        <div class="meteor"></div>
+        <div class="meteor"></div>
+    </div>
+    <div class="bg-grid"></div>
+    
+    <nav>
+        <div class="nav-left">
+            <div class="profile-img">
+                <img src="assets/navbar-profile.png" alt="Achmad Nurnaafi">
+            </div>
+            <div class="nav-name">
+                <h4>Achmad Nurnaafi</h4>
+                <p><span class="status-dot"></span> Available for Opportunities</p>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round">
+                        <i class="fa-solid fa-sun light-icon"></i>
+                        <i class="fa-solid fa-moon dark-icon"></i>
+                    </div>
+                </label>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section fade-in">
+        <div class="hero-content">
+            <p class="greeting">Hello, I'm</p>
+            <h1 class="name">ACHMAD<br><span class="highlight">NURNAAFI</span></h1>
+            <h3 class="roles" id="hero-roles"></h3>
+            <p class="description" id="hero-desc"></p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-folder"></i> View Projects <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#contact" class="btn btn-secondary"><i class="fa-solid fa-microchip"></i> Let's Collaborate</a>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/achmadnaafi" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/achmad-nurnaafi" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/achmad.naafi_" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="mailto:achmadnurnaafi123@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+                <a href="https://wa.me/628989149386" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="hero-graphics">
+            <div class="tech-container">
+                <div class="floating-icon icon-1"><i class="fa-solid fa-microchip"></i></div>
+                <div class="floating-icon icon-2"><i class="fa-solid fa-robot"></i></div>
+                <div class="floating-icon icon-3"><i class="fa-solid fa-satellite-dish"></i></div>
+                <div class="formula math-1">V = IR</div>
+                <div class="formula math-2">dV/dt</div>
+                <div class="formula math-3">v<sub>c</sub>(t) = V<sub>0</sub>(1 - e<sup>-t/RC</sup>)</div>
+                <div class="binary">10101001<br>01101100<br>11001010</div>
+                <div class="circuit-circle"></div>
+                <div class="circuit-circle small"></div>
+                <div class="orbit-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="page-section fade-in">
+        <div class="section-header">
+            <h2 class="section-title">About Me</h2>
+            <div class="line"></div>
+        </div>
+        <div class="about-content">
+            <div class="about-text" id="about-text-container"></div>
+            <div class="about-stats">
+                <div class="stat-box">
+                    <h3 id="project-count">0+</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-box">
+                    <h3 id="experience-count">0+</h3>
+                    <p>Experiences</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="page-section fade-in">
+        <div class="section-header">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="line"></div>
+        </div>
+        <div class="carousel-wrapper">
+            <button class="slide-btn left-btn" id="slideLeftSkills">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div class="skills-grid carousel-container" id="skills-container"></div>
+            <button class="slide-btn right-btn" id="slideRightSkills">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <section id="projects" class="page-section fade-in">
+        <div class="section-header">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="line"></div>
+        </div>
+        <div class="carousel-wrapper">
+            <button class="slide-btn left-btn" id="slideLeftProjects">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div class="projects-grid carousel-container" id="projects-container"></div>
+            <button class="slide-btn right-btn" id="slideRightProjects">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <section id="experience" class="page-section fade-in">
+        <div class="section-header">
+            <h2 class="section-title">Experience</h2>
+            <div class="line"></div>
+        </div>
+        <div class="timeline" id="experience-container"></div>
+        
+        <div class="view-more-container" id="view-more-container" style="display: none; text-align: center; margin-top: 2rem;">
+            <button id="viewMoreBtn" class="btn btn-secondary" style="margin: 0 auto;">
+                <span>View All Experience</span> <i class="fa-solid fa-chevron-down"></i>
+            </button>
+        </div>
+    </section>
+
+    <section id="contact" class="page-section fade-in">
+        <div class="section-header">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="line"></div>
+        </div>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h3>Let's Connect</h3>
+                <p>Currently open for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+                <div class="contact-details">
+                    <a href="mailto:achmadnurnaafi123@gmail.com"><i class="fa-regular fa-envelope"></i> achmadnurnaafi123@gmail.com</a>
+                    <a href="https://wa.me/628989149386" target="_blank"><i class="fa-brands fa-whatsapp"></i> +62 898-9149-386</a>
+                </div>
+            </div>
+            <form action="https://formsubmit.co/achmadnurnaafi123@gmail.com" method="POST" class="contact-form">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="_honey" style="display:none"> 
+                <input type="hidden" name="_template" value="table">
+                <div class="input-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <input type="text" name="_subject" placeholder="Subject" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Achmad Nurnaafi. Built with logic and physics.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
