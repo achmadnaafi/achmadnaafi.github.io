@@ -53,7 +53,7 @@ const myProjects = [
     },
     {
         title: "Indonesian Weather Monitoring",
-        desc: "Dashboard pemantauan cuaca real-time untuk Indonesia. Menampilkan data cuaca terkini dari berbagai kota di seluruh Nusantara dengan dukungan grafik tren, peta interaktif, dan pembaruan otomatis.",
+        desc: "Real-time weather monitoring dashboard for Indonesia, displaying current weather data from various cities across the archipelago with interactive charts, Leaflet maps, and auto-refreshing updates.",
         tech: ["Vue", "Flask", "Chart.js", "Leaflet", "Open-Meteo API", "JWT Auth"],
         images: [
             "https://raw.githubusercontent.com/achmadnaafi/indonesian-weather-monitoring/main/assets/login.png",
