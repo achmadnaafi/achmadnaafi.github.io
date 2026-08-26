@@ -1,10 +1,10 @@
 // Fitur Data Portofolio
 const myProfile = {
     roles: ["Complex System Physics", "Electro & Instrumentation", "Web Developer", "IT Support"],
-    heroDesc: "A physics graduate driven by analytical problem solving. I leverage my understanding of complex systems to deliver results across multiple technical domains, offering practical skills in machine learning, electro & instrumentation, web development, and technical IT support.",
+    heroDesc: "Exploring complex systems, building practical solutions, and continuously expanding knowledge across science, engineering, and technology.",
     aboutText: [
-        "Hello! I'm an engineer who loves dissecting how things work from lines of code to physical circuits. My academic roots in Complex System Physics trained me to look at problems analytically, allowing me to process complex data and understand the core mechanics of any system.",
-        "I don't just stick to one domain. On any given day, you might find me troubleshooting a Linux network, building a responsive web interface, assembling electro & instrumentation setups, or exploring Software Defined Radio (SDR). I enjoy getting my hands dirty to build and support practical, efficient solutions."
+        "Hello! I'm an engineer who enjoys understanding how systems work, whether they're built from lines of code, electronic circuits, or real-world data. My background in Complex System Physics taught me to approach problems analytically and break down complex challenges into practical solutions.",
+        "I don't just stick to one domain. On any given day, you might find me troubleshooting a Linux network, building a responsive web interface, assembling instrumentation setups, or exploring Software Defined Radio (SDR). I enjoy getting my hands dirty and turning ideas into reliable, practical solutions."
     ]
 };
 
@@ -38,12 +38,17 @@ const mySkills = [
 
 const myProjects = [
     {
-        title: "Curating Projects...",
-        desc: "Saya sedang menyortir dan mendokumentasikan beberapa proyek terbaik saya. Bagian ini akan segera diperbarui dalam waktu dekat!",
-        tech: ["Maintenance", "Coming Soon"],
-        image: "", 
-        iconFallback: "fa-person-digging",
-        github: "",
+        title: "Gas Chromatography Classification",
+        desc: "Machine learning classification pipeline for volatile organic compounds (VOC) using portable micro‑GC instrumentation with Savitzky‑Golay filtering. Successfully distinguished Ethanol, Toluene, Spirit, and Butane with 100% accuracy through PCA‑LDA feature reduction and SVM classification.",
+        tech: ["Python", "Jupyter", "Pandas", "NumPy", "SciPy", "scikit-learn", "Matplotlib", "Seaborn"],
+        images: [
+            "assets/projects/gas-chromatography/etanol-tcd-preprocessing.png",
+            "assets/projects/gas-chromatography/01_feature_correlation_heatmap.png",
+            "assets/projects/gas-chromatography/pca-gas-chromatography.png",
+            "assets/projects/gas-chromatography/cm_svm_lda.png"
+        ],
+        iconFallback: "fa-flask-vial",
+        github: "https://github.com/achmadnaafi/Gas-Chromatography-Classification",
         demo: ""
     }
 ];
@@ -56,7 +61,7 @@ const myExperience = [
             {
                 title: "IT Programmer Intern",
                 period: "Oktober 2025 - April 2026",
-                desc: "Collaborated within a development team to build and maintain internal web applications using Laravel and Vue.js. My responsibilities spanned the development lifecycle, including designing MySQL databases, managing version control via Git, and performing rigorous debugging to optimize overall system performance and functionality."
+                desc: "Developed and maintained internal web applications using Laravel and Vue.js, contributing to database design, Git-based version control, and application testing and debugging."
             }
         ]
     },
@@ -66,7 +71,7 @@ const myExperience = [
             {
                 title: "Mechatronics Engineer Intern",
                 period: "February 2024 - July 2024",
-                desc: "Contributed to a multidisciplinary R&D team focusing on electrical, mechanical, and software integration. I handled end-to-end hardware prototyping, from PCB design and assembly to fabricating casings utilizing 3D printing and laser cutting. Additionally, I developed Python-based GUIs for data acquisition and conducted RF signal analysis using SDR and unsupervised machine learning for anomaly detection."
+                desc: "Worked on hardware prototyping, embedded systems, and Python-based data acquisition applications. Conducted RF signal analysis using SDR and machine learning techniques for anomaly detection."
             },
         ]
     }
@@ -133,7 +138,18 @@ function renderProjects() {
     container.innerHTML = myProjects.map(project => `
         <div class="project-card fade-in">
             <div class="project-img">
-                ${project.image ? `<img src="${project.image}" alt="${project.title}">` : `<i class="fa-solid ${project.iconFallback || 'fa-code'} placeholder-icon"></i>`}
+                ${project.images?.length ? `
+                    <div class="project-gallery" data-images='${JSON.stringify(project.images)}'>
+                        <img src="${project.images[0]}" alt="${project.title} preview">
+                        ${project.images.length > 1 ? `
+                            <button class="gallery-btn gallery-prev" type="button" aria-label="Previous image">‹</button>
+                            <button class="gallery-btn gallery-next" type="button" aria-label="Next image">›</button>
+                            <div class="gallery-dots">
+                                ${project.images.map((_, index) => `<span class="gallery-dot${index === 0 ? ' active' : ''}"></span>`).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+                ` : project.image ? `<img src="${project.image}" alt="${project.title}">` : `<i class="fa-solid ${project.iconFallback || 'fa-code'} placeholder-icon"></i>`}
             </div>
             <div class="project-info">
                 <h4>${project.title}</h4>
@@ -341,4 +357,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setupSlider('slideLeftSkills', 'slideRightSkills', 'skills-container', '.skill-category');
     setupSlider('slideLeftProjects', 'slideRightProjects', 'projects-container', '.project-card');
+
+    // Project Gallery Carousel (multiple images per card)
+    document.querySelectorAll('.project-gallery').forEach(gallery => {
+        const images = JSON.parse(gallery.dataset.images);
+        const imgEl = gallery.querySelector('img');
+        const dots = gallery.querySelectorAll('.gallery-dot');
+        const prevBtn = gallery.querySelector('.gallery-prev');
+        const nextBtn = gallery.querySelector('.gallery-next');
+        let current = 0;
+
+        function update(index) {
+            imgEl.style.opacity = 0;
+            setTimeout(() => {
+                imgEl.src = images[index];
+                imgEl.style.opacity = 1;
+            }, 150);
+            dots.forEach((d, i) => d.classList.toggle('active', i === index));
+        }
+
+        prevBtn?.addEventListener('click', e => {
+            e.stopPropagation();
+            current = (current - 1 + images.length) % images.length;
+            update(current);
+        });
+        nextBtn?.addEventListener('click', e => {
+            e.stopPropagation();
+            current = (current + 1) % images.length;
+            update(current);
+        });
+        dots.forEach((dot, i) => dot.addEventListener('click', e => {
+            e.stopPropagation();
+            current = i;
+            update(current);
+        }));
+
+        // Keyboard support
+        gallery.addEventListener('keydown', e => {
+            if (e.key === 'ArrowLeft') { current = (current - 1 + images.length) % images.length; update(current); }
+            if (e.key === 'ArrowRight') { current = (current + 1) % images.length; update(current); }
+        });
+    });
 });
