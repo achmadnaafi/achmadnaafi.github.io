@@ -50,6 +50,19 @@ const myProjects = [
         iconFallback: "fa-flask-vial",
         github: "https://github.com/achmadnaafi/Gas-Chromatography-Classification",
         demo: ""
+    },
+    {
+        title: "Indonesian Weather Monitoring",
+        desc: "Dashboard pemantauan cuaca real-time untuk Indonesia. Menampilkan data cuaca terkini dari berbagai kota di seluruh Nusantara dengan dukungan grafik tren, peta interaktif, dan pembaruan otomatis.",
+        tech: ["Vue", "Flask", "Chart.js", "Leaflet", "Open-Meteo API", "JWT Auth"],
+        images: [
+            "https://raw.githubusercontent.com/achmadnaafi/indonesian-weather-monitoring/main/assets/login.png",
+            "https://raw.githubusercontent.com/achmadnaafi/indonesian-weather-monitoring/main/assets/dashboard.png",
+            "https://raw.githubusercontent.com/achmadnaafi/indonesian-weather-monitoring/main/assets/map.png"
+        ],
+        iconFallback: "fa-cloud-sun-rain",
+        github: "https://github.com/achmadnaafi/indonesian-weather-monitoring",
+        demo: ""
     }
 ];
 
