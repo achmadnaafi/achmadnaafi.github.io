@@ -231,8 +231,19 @@ input:checked + .slider:before { transform: translateX(30px); background-color: 
 .project-info { padding: 1.5rem; }
 .project-info h4 { font-size: 1.2rem; margin-bottom: 0.5rem; }
 .project-info p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; }
-.project-tech { display: flex; flex-wrap: wrap; gap: 10px; }
-.project-tech span { font-size: 0.8rem; font-weight: 600; color: var(--primary); }
+.project-tech { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1rem; }
+.project-tech span {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--primary);
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+}
 .project-links { display: flex; gap: 10px; margin-top: 1.5rem; }
 .btn-project { display: flex; align-items: center; gap: 6px; padding: 6px 12px; font-size: 0.8rem; font-weight: 500; color: var(--text-main); background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; text-decoration: none; transition: all 0.3s; }
 .btn-project:hover { color: var(--primary); border-color: var(--primary); background-color: rgba(59, 130, 246, 0.1); transform: translateY(-2px); }
