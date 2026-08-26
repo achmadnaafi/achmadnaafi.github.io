@@ -42,10 +42,10 @@ const myProjects = [
         desc: "Machine learning classification pipeline for volatile organic compounds (VOC) using portable micro‑GC instrumentation with Savitzky‑Golay filtering. Successfully distinguished Ethanol, Toluene, Spirit, and Butane with 100% accuracy through PCA‑LDA feature reduction and SVM classification.",
         tech: ["Python", "Jupyter", "Pandas", "NumPy", "SciPy", "scikit-learn", "Matplotlib", "Seaborn"],
         images: [
-            "assets/projects/gas-chromatography/etanol-tcd-preprocessing.png",
-            "assets/projects/gas-chromatography/01_feature_correlation_heatmap.png",
-            "assets/projects/gas-chromatography/pca-gas-chromatography.png",
-            "assets/projects/gas-chromatography/cm_svm_lda.png"
+            "https://raw.githubusercontent.com/achmadnaafi/Gas-Chromatography-Classification/main/assets/preprocessing/etanol-tcd-preprocessing.png",
+            "https://raw.githubusercontent.com/achmadnaafi/Gas-Chromatography-Classification/main/assets/feature_analysis/01_feature_correlation_heatmap.png",
+            "https://raw.githubusercontent.com/achmadnaafi/Gas-Chromatography-Classification/main/assets/feature_analysis/04_pca_scatter_plot.png",
+            "https://raw.githubusercontent.com/achmadnaafi/Gas-Chromatography-Classification/main/assets/final-model/cm_svm_lda.png"
         ],
         iconFallback: "fa-flask-vial",
         github: "https://github.com/achmadnaafi/Gas-Chromatography-Classification",
